@@ -59,20 +59,18 @@ public class MainActivity extends ActionBarActivity {
     
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
     	IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
-		if (scanResult != null) {
+		if (scanResult != null) { 
 			TextView url = (TextView) findViewById(R.id.textView1);
 			url.setText(scanResult.getContents());
 			
-			byte[] blob = scanResult.getRawBytes();
-			Bitmap bmp = BitmapFactory.decodeByteArray(blob,0,blob.length);
-			
+			//byte[] blob = scanResult.getRawBytes();
+			//Bitmap bmp = BitmapFactory.decodeByteArray(blob,0,blob.length);
 			
 			//RelativeLayout rl = (RelativeLayout)findViewById(R.id.container);
-			ImageView iv = new ImageView(this);
-			iv.setImageBitmap(bmp);
+			//ImageView iv = new ImageView(this);
+			//iv.setImageBitmap(bmp);
 			//iv.setImageResource(bmp); //or iv.setImageDrawable(getResources().getDrawable(R.drawable.some_drawable_of_yours));
 			//rl.addView(iv);
-			
 			
 		}
     }
